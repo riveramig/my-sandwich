@@ -8,11 +8,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { reduceProvider, REDUCERS_TOKEN } from './store';
 import { HeaderComponent } from './components/header/header.component';
-import { HomeComponent } from './components/home/home.component';
+import { HomeComponent } from './pages/home/home.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { LoginBoxComponent } from './components/login-box/login-box.component';
 import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
 import { SearchBoxComponent } from './components/search-box/search-box.component';
+import { CategoryComponent } from './pages/category/category.component';
+import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
+import { CheckoutComponent } from './pages/checkout/checkout.component';
+import { PaymentConfirmationComponent } from './pages/payment-confirmation/payment-confirmation.component';
 
 const metaReducers: MetaReducer<Object, Action>[] = []
 
@@ -24,7 +28,11 @@ const metaReducers: MetaReducer<Object, Action>[] = []
     FooterComponent,
     LoginBoxComponent,
     ShoppingCartComponent,
-    SearchBoxComponent
+    SearchBoxComponent,
+    CategoryComponent,
+    ProductDetailComponent,
+    CheckoutComponent,
+    PaymentConfirmationComponent
   ],
   imports: [
     BrowserModule,

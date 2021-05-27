@@ -1,9 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './components/home/home.component';
+import { RoutesApp } from './enums/routes.enum';
+import { CategoryComponent } from './pages/category/category.component';
+import { HomeComponent } from './pages/home/home.component';
 
 const routes: Routes = [
-  {path:'home', component: HomeComponent},
+  {path:RoutesApp.HOME, component: HomeComponent},
+  {path:RoutesApp.CATEGORY, component: CategoryComponent},
   {path:'', redirectTo: '/home', pathMatch: 'full'}
 ];
 

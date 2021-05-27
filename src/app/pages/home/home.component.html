@@ -74,36 +74,36 @@
     <div class="nt_section type_collection_list">
         <div class="container">
             <div class="mt__30 nt_cats_holder row equal_nt hoverz_true cat_size_4 cat_lay4_1 cat_lay5_3 cat_space_30 cat_design_1">
-                <div class="cat_grid_item cat_space_item cat_grid_item_1 col-md-6 col-12">
+                <div class="cat_grid_item cat_space_item cat_grid_item_1 col-md-6 col-12" (click)="navigateCategory(categories[1].id)">
                     <div class="cat_grid_item__content pr oh">
-                        <a href="shop-right-sidebar.html" class="d-block cat_grid_item__link">
-                            <div class="cat_grid_item__overlay item__position nt_bg_lz lazyload top" data-bgset="assets/images/home-header-01/women-cat.jpg"></div>
+                        <a class="d-block cat_grid_item__link">
+                            <div class="cat_grid_item__overlay item__position nt_bg_lz lazyload top" [attr.data-bgset]="categories[1].imageBackground"></div>
                         </a>
                         <div class="cat_grid_item__wrapper pe_none">
-                            <div class="cat_grid_item__title">Women</div>
+                            <div class="cat_grid_item__title">{{categories[1].nameToDisplay}}</div>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-lg-3 col-md-3 col-6">
                     <div class="row">
-                        <div class="cat_grid_item cat_space_item cat_grid_item_2 col-12">
+                        <div class="cat_grid_item cat_space_item cat_grid_item_2 col-12" (click)="navigateCategory(categories[0].id)">
                             <div class="cat_grid_item__content pr oh">
-                                <a href="shop-right-sidebar.html" class="d-block cat_grid_item__link">
-                                    <div class="cat_grid_item__overlay item__position nt_bg_lz lazyload center" data-bgset="assets/images/home-01/bn-02.jpg"></div>
+                                <a class="d-block cat_grid_item__link">
+                                    <div class="cat_grid_item__overlay item__position nt_bg_lz lazyload center" [attr.data-bgset]="categories[0].imageBackground"></div>
                                 </a>
                                 <div class="cat_grid_item__wrapper pe_none">
-                                    <div class="cat_grid_item__title">Accessories</div>
+                                    <div class="cat_grid_item__title">{{categories[0].nameToDisplay}}</div>
                                 </div>
                             </div>
                         </div>
-                        <div class="cat_grid_item cat_space_item cat_grid_item_3 col-12">
+                        <div class="cat_grid_item cat_space_item cat_grid_item_3 col-12" (click)="navigateCategory(categories[2].id)">
                             <div class="cat_grid_item__content pr oh">
-                                <a href="shop-right-sidebar.html" class="d-block cat_grid_item__link">
-                                    <div class="cat_grid_item__overlay item__position nt_bg_lz lazyload center" data-bgset="assets/images/home-01/bn-03.jpg"></div>
+                                <a class="d-block cat_grid_item__link">
+                                    <div class="cat_grid_item__overlay item__position nt_bg_lz lazyload center" [attr.data-bgset]="categories[2].imageBackground"></div>
                                 </a>
                                 <div class="cat_grid_item__wrapper pe_none">
-                                    <div class="cat_grid_item__title">Footwear</div>
+                                    <div class="cat_grid_item__title">{{categories[2].nameToDisplay}}</div>
                                 </div>
                             </div>
                         </div>
@@ -111,7 +111,7 @@
                 </div>
                 <div class="cat_grid_item cat_space_item cat_grid_item_4  col-md-3 col-6">
                     <div class="cat_grid_item__content pr oh">
-                        <a href="shop-right-sidebar.html" class="d-block cat_grid_item__link">
+                        <a class="d-block cat_grid_item__link">
                             <div class="cat_grid_item__overlay item__position nt_bg_lz lazyload center" data-bgset="assets/images/home-01/bn-04.jpg"></div>
                         </a>
                         <div class="cat_grid_item__wrapper pe_none">

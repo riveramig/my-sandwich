@@ -1,4 +1,5 @@
 ( function ( $ ) {
+    setTimeout(function () {
         'use strict';
         const body           = $( 'body' ),
               $window        = $( window ),
@@ -485,7 +486,6 @@
                 txt_header_banner = '#kalles-section-header_banner';
 
             init();
-
             $window.on( 'resize', function () {
                 init();
             } );
@@ -2728,6 +2728,6 @@
              * ********************************************/
             setTimeout( () => $( '.flickity-enabled' ).kallesDisableNavSlider(), 3000 );
         } );
-    }
-)
+    },2000);
+})
 ( window.jQuery );
