@@ -6,7 +6,7 @@
         <div class="dn" id="cat_kalles">
             <ul class="cat_lv_0">
                 <li class="cat-item" *ngFor="let category of allCategories" [ngClass]="{'current-cat':isLinkActive('category='+category.id)}" (click)="navigateCategory(category.id)">
-                    <a class="cat_link dib">{{category.nameToDisplay}}</a>
+                    <a class="cat_link dib link">{{category.nameToDisplay}}</a>
                 </li>
             </ul>
         </div>
