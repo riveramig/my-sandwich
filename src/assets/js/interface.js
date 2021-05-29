@@ -1888,7 +1888,7 @@
                   $container = $( '#quick-shop-tpl' ),
                   data       = $container.length ? $container.html() : null;
 
-            if ( data.length ) {
+            if ( data != null && data.length ) {
                 $.magnificPopup.open( {
                     items        : {
                         src  : '<div class="mfp-with-anim pp_qs" id="content_quickview">' + data + '</div>', /* can be a HTML string, jQuery_T4NT object, or CSS selector*/
@@ -2647,7 +2647,7 @@
 
         /**********************************************
          * Remove mini cart
-         * ********************************************/
+         * *******************************************
         $nt_js_cart.on( 'click', '.cart_ac_remove', function ( evt ) {
             evt.preventDefault();
             evt.stopPropagation();

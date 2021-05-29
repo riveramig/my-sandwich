@@ -1,12 +1,26 @@
 import { Action } from "@ngrx/store";
+import { Sandwich } from "src/app/models/sandwich.model";
 
 export enum CartActionType {
-    setCart = '[Cart] set cart'
+    addSandwichToCart = '[Cart] add sandwich',
+    removeSandwichFromCart = '[Cart] remove sandwich',
+    reduceQuantitySandwichFromCart = '[Cart] remove quantity sandwich'
 }
 
-export class SetCart implements Action {
-    public readonly type = CartActionType.setCart;
-    constructor(public payload:any){}
+export class AddSandwich implements Action {
+    public readonly type = CartActionType.addSandwichToCart;
+    constructor(public payload:Sandwich){}
 }
 
-export declare type CartActions = SetCart;
+export class RemoveSandwich implements Action {
+    public readonly type = CartActionType.removeSandwichFromCart;
+    constructor(public payload:number){}
+}
+
+export class ReduceQuantitySandwich implements Action {
+    public readonly type = CartActionType.reduceQuantitySandwichFromCart;
+    constructor(public payload:number){}
+}
+
+
+export declare type CartActions = AddSandwich | RemoveSandwich | ReduceQuantitySandwich;

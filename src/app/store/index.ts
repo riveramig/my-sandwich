@@ -21,7 +21,7 @@ export interface AppState{
 export const reducers: ActionReducerMap<AppState> = {
     user: userReducer,
     sandwich: sandwichReducer,
-    cart: cartReducer,
+    cart: cartReducer as any,
     categories: categoryReducer
 }
 
