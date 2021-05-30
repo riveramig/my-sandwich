@@ -24,8 +24,10 @@ import { CategoryComponent } from './pages/category/category.component';
 import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
 import { CheckoutComponent } from './pages/checkout/checkout.component';
 import { PaymentConfirmationComponent } from './pages/payment-confirmation/payment-confirmation.component';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { ProductService } from './services/product/product.service';
+import { HttpXsrfInterceptor } from './utils/interceptors/XhrInterceptor';
 
 const metaReducers: MetaReducer<Object, Action>[] = []
 
@@ -61,7 +63,12 @@ export function HttpLoaderFactory(http: HttpClient) {
       }
     }),
   ],
-  providers: [reduceProvider],
+  providers: [
+    ProductService,
+    HttpXsrfInterceptor,
+    { provide: HTTP_INTERCEPTORS, useClass: HttpXsrfInterceptor, multi: true },
+    reduceProvider
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {

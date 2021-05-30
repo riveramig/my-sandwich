@@ -1,5 +1,6 @@
 export enum CategoriesEnum {
-    bahn = 'bahn',
+    banh = 'banh',
     veggies = 'veggies',
-    gyros = 'gyros'
+    gyros = 'gyros',
+    drinks = 'drinks'
 }
