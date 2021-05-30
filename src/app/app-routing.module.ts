@@ -6,10 +6,10 @@ import { HomeComponent } from './pages/home/home.component';
 import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
 
 const routes: Routes = [
-  {path:RoutesApp.HOME, component: HomeComponent},
-  {path:RoutesApp.CATEGORY, component: CategoryComponent},
-  {path:RoutesApp.PRODUCT, component: ProductDetailComponent},
-  {path:'', redirectTo: '/home', pathMatch: 'full'}
+  { path: RoutesApp.HOME, component: HomeComponent },
+  { path: RoutesApp.CATEGORY, component: CategoryComponent },
+  { path: `${RoutesApp.PRODUCT}:code`, component: ProductDetailComponent },
+  { path: '', redirectTo: '/home', pathMatch: 'full' }
 ];
 
 @NgModule({

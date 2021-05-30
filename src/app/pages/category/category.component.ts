@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { select, Store } from '@ngrx/store';
 import { combineLatest, Observable } from 'rxjs';
-import {take} from "rxjs/operators"
+import { take } from "rxjs/operators"
 import { RoutesApp } from 'src/app/enums/routes.enum';
 import { Sandwich } from 'src/app/models/sandwich.model';
 import { AddSandwich } from 'src/app/store/cart/cart.actions';
@@ -17,12 +17,12 @@ import { selectAllSandwiches } from 'src/app/store/sandwich/sandwich.selector';
 })
 export class CategoryComponent implements OnInit {
 
-  public allCategories:Category[];
-  public currentCategory:Category;
-  public allSandwiches$:Observable<Sandwich[]> = this.store.pipe(select(selectAllSandwiches));
+  public allCategories: Category[];
+  public currentCategory: Category;
+  public allSandwiches$: Observable<Sandwich[]> = this.store.pipe(select(selectAllSandwiches));
 
-  constructor(private activatedRoute: ActivatedRoute, private store:Store<CategoriesState>, private router:Router) {
-    this.store.pipe(select(selectCategories),take(1)).subscribe((categories)=>{
+  constructor(private activatedRoute: ActivatedRoute, private store: Store<CategoriesState>, private router: Router) {
+    this.store.pipe(select(selectCategories), take(1)).subscribe((categories) => {
       this.allCategories = categories
     })
   }
@@ -32,27 +32,32 @@ export class CategoryComponent implements OnInit {
       this.activatedRoute.queryParams,
       this.store.pipe(select(selectCategories))
     ])
-    .subscribe(([queryParams,categories])=> {
-      this.currentCategory = categories.find((category)=>category.id === queryParams['category'])
-    })
+      .subscribe(([queryParams, categories]) => {
+        this.currentCategory = categories.find((category) => category.id === queryParams['category'])
+      })
   }
 
   isLinkActive(category): boolean {
     const queryParamsIndex = this.router.url.indexOf('?');
-    return queryParamsIndex === -1 ? false : (this.router.url.split('?')[1]===category);
- }
+    return queryParamsIndex === -1 ? false : (this.router.url.split('?')[1] === category);
+  }
 
- navigateCategory(category:string) {
-  this.router.navigate([RoutesApp.CATEGORY],{
-    queryParams:{
+  navigateCategory(category: string) {
+    this.router.navigate([RoutesApp.CATEGORY], {
+      queryParams: {
         category
       }
     })
   }
 
-  addSandwichToCart(sandwich:Sandwich) {
+  addSandwichToCart(sandwich: Sandwich) {
     console.log(sandwich)
     this.store.dispatch(new AddSandwich(sandwich));
+  }
+
+  viewDetail(productCode) {
+    debugger
+    this.router.navigate([RoutesApp.PRODUCT, productCode]);
   }
 
 }

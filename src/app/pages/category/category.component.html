@@ -348,11 +348,10 @@
                     <!--end filter result-->
 
                     <!--products list-->
-                    <div class="on_list_view_false products nt_products_holder row fl_center row_pr_1 cdt_des_1 round_cd_false nt_cover ratio_nt position_8 space_30 nt_default">
-                        <div
-                            class="col-lg-3 col-md-3 col-6 pr_animated done mt__30 pr_grid_item product nt_pr desgin__1"
-                            *ngFor="let sandwich of allSandwiches$ | async"
-                            >
+                    <div
+                        class="on_list_view_false products nt_products_holder row fl_center row_pr_1 cdt_des_1 round_cd_false nt_cover ratio_nt position_8 space_30 nt_default">
+                        <div class="col-lg-3 col-md-3 col-6 pr_animated done mt__30 pr_grid_item product nt_pr desgin__1"
+                            *ngFor="let sandwich of allSandwiches$ | async">
                             <div class="product-inner pr">
                                 <div class="product-image pr oh lazyload">
                                     <span class="tc nt_labels pa pe_none cw"><span
@@ -366,9 +365,10 @@
                                             data-bgset="assets/images/megamenu/pr-02.jpg"></div>
                                     </div>
                                     <div class="hover_button op__0 tc pa flex column ts__03">
-                                        <a class="pr nt_add_qv js_add_qv cd br__40 pl__25 pr__25 bgw tc dib ttip_nt tooltip_top_left"
-                                            ><span class="tt_txt">Quick view</span><i
-                                                class="iccl iccl-eye"></i><span>Quick view</span></a>
+                                        <a (click)="viewDetail(sandwich.code)"
+                                            class="pr nt_add_qv js_add_qv cd br__40 pl__25 pr__25 bgw tc dib ttip_nt tooltip_top_left"><span
+                                                class="tt_txt">Quick view</span><i class="iccl iccl-eye"></i><span>Quick
+                                                view</span></a>
                                         <a (click)="addSandwichToCart(sandwich)"
                                             class="pr pr_atc cd br__40 bgw tc dib js__qs cb chp ttip_nt tooltip_top_left"><span
                                                 class="tt_txt">Quick Shop</span><i
@@ -379,7 +379,8 @@
                                     <h3 class="product-title pr fs__14 mg__0 fwm">
                                         <a class="cd chp" href="product-detail-layout-01.html">{{sandwich.name}}</a>
                                     </h3>
-                                    <span class="price dib mb__5">{{sandwich.price | currency:'COP ': 'symbol' : '1.0-0'}}</span>
+                                    <span class="price dib mb__5">{{sandwich.price | currency:'COP ': 'symbol' :
+                                        '1.0-0'}}</span>
                                 </div>
                             </div>
                         </div>

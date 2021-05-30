@@ -2,10 +2,11 @@ import { SandwichActions } from "./sandwich.actions";
 import { SandwichState } from "./sandwich.state";
 
 const initState: SandwichState = {
-    sandwiches:[
+    sandwiches: [
         {
             status: true,
             id: 1,
+            img: '',
             code: 10001,
             name: "Sandiwich Pollo",
             description: "Sandwich Milanesa de Pollo con vegetales",
@@ -40,6 +41,7 @@ const initState: SandwichState = {
         {
             status: true,
             id: 2,
+            img: '',
             code: 10002,
             name: "Sandiwich Carne",
             description: "Sandiwich Carne con vegetales",
@@ -75,7 +77,7 @@ const initState: SandwichState = {
 }
 
 export function sandwichReducer(state = initState, action: SandwichActions) {
-    switch(action.type) {
+    switch (action.type) {
         default:
             return state;
     }
