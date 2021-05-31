@@ -6,16 +6,16 @@ import { CategoriesState } from "./category.state";
 const initState: CategoriesState = {
     categories: [
         {
-            id: CategoriesEnum.banh,
+            id: CategoriesEnum.sandwiches,
             imageBackground: 'assets/images/mySandwich/bahn-mi.jpg',
-            nameToDisplay: 'Bánh Mí',
-            description: 'Los mejores'
+            nameToDisplay: 'Sandwiches',
+            description: 'Los mas saludables'
         },
         {
             id: CategoriesEnum.veggies,
             imageBackground: 'assets/images/mySandwich/veggie-category.jpg',
             nameToDisplay: 'Veggies',
-            description: 'Los mas saludables'
+            description: 'Los mejores'
         },
         {
             id: CategoriesEnum.gyros,

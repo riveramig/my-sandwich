@@ -18,6 +18,11 @@ export class ProductService extends Services {
   backendUrl = environment.url;
   headers = this.GetHttpHeaders();
 
+  getProducts(caterory: any): Observable<any> {
+    // TO-DO: Manage category
+    return this.http.get(`${this.backendUrl}product`, { withCredentials: true });
+  }
+
   getProduct(productCode: any): Observable<any> {
     return this.http.get(`${this.backendUrl}product/${productCode}`, { withCredentials: true });
   }
