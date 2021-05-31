@@ -28,6 +28,9 @@ import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common
 import { FormsModule } from '@angular/forms';
 import { ProductService } from './services/product/product.service';
 import { HttpXsrfInterceptor } from './utils/interceptors/XhrInterceptor';
+import { EffectsModule } from '@ngrx/effects';
+import { SandwichEffects } from './store/sandwich/sandwich.effects';
+import { DiscountPipe } from './pipes/discount.pipe';
 
 const metaReducers: MetaReducer<Object, Action>[] = []
 
@@ -46,7 +49,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     CategoryComponent,
     ProductDetailComponent,
     CheckoutComponent,
-    PaymentConfirmationComponent
+    PaymentConfirmationComponent,
+    DiscountPipe
   ],
   imports: [
     BrowserModule,
@@ -62,12 +66,16 @@ export function HttpLoaderFactory(http: HttpClient) {
         deps: [HttpClient]
       }
     }),
+    EffectsModule.forRoot([SandwichEffects]),
   ],
   providers: [
     ProductService,
     HttpXsrfInterceptor,
     { provide: HTTP_INTERCEPTORS, useClass: HttpXsrfInterceptor, multi: true },
     reduceProvider
+  ],
+  exports: [
+    DiscountPipe
   ],
   bootstrap: [AppComponent]
 })

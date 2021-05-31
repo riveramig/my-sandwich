@@ -9,6 +9,8 @@ import { AddSandwich } from 'src/app/store/cart/cart.actions';
 import { selectCategories } from 'src/app/store/catgories/category.selector';
 import { CategoriesState, Category } from 'src/app/store/catgories/category.state';
 import { selectAllSandwiches } from 'src/app/store/sandwich/sandwich.selector';
+import { SandwichState } from 'src/app/store/sandwich/sandwich.state';
+import { GetSandwiches } from 'src/app/store/sandwich/sandwich.actions';
 
 @Component({
   selector: 'app-category',
@@ -19,9 +21,14 @@ export class CategoryComponent implements OnInit {
 
   public allCategories: Category[];
   public currentCategory: Category;
-  public allSandwiches$: Observable<Sandwich[]> = this.store.pipe(select(selectAllSandwiches));
+  public products$: Observable<Sandwich[]> = this.sandwichStore.pipe(select(selectAllSandwiches));
 
-  constructor(private activatedRoute: ActivatedRoute, private store: Store<CategoriesState>, private router: Router) {
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private store: Store<CategoriesState>,
+    private sandwichStore: Store<SandwichState>,
+    private router: Router
+  ) {
     this.store.pipe(select(selectCategories), take(1)).subscribe((categories) => {
       this.allCategories = categories
     })
@@ -34,7 +41,8 @@ export class CategoryComponent implements OnInit {
     ])
       .subscribe(([queryParams, categories]) => {
         this.currentCategory = categories.find((category) => category.id === queryParams['category'])
-      })
+        this.getSandwiches(this.currentCategory.id)
+      });
   }
 
   isLinkActive(category): boolean {
@@ -56,8 +64,12 @@ export class CategoryComponent implements OnInit {
   }
 
   viewDetail(productCode) {
-    debugger
     this.router.navigate([RoutesApp.PRODUCT, productCode]);
+  }
+
+  getSandwiches(code) {
+    console.log('getSandwiches();');
+    this.sandwichStore.dispatch(new GetSandwiches(code));
   }
 
 }

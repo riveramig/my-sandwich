@@ -9,7 +9,7 @@
                         <nav class="sp-breadcrumb">
                             <a href="index.html">Home</a><i class="facl facl-angle-right"></i><a
                                 href="shop-filter-sidebar.html">New Arrival</a><i
-                                class="facl facl-angle-right"></i>{{product.name}}
+                                class="facl facl-angle-right"></i>{{product?.name}}
                         </nav>
                     </div>
                     <div class="col-auto flex al_center">
@@ -44,7 +44,7 @@
                                         <div class="img_ptw p_ptw p-item sp-pr-gallery__img w__100 nt_bg_lz lazyload padding-top__127_66 media_id_001"
                                             data-mdid="001" data-height="1440" data-width="1128"
                                             data-ratio="0.7833333333333333" data-mdtype="image"
-                                            [attr.data-src]="product.img" [attr.data-bgset]="product.img"
+                                            [attr.data-src]="product?.img" [attr.data-bgset]="product?.img"
                                             data-cap="Blush Beanssse - color pink , size S">
                                         </div>
                                     </div>
@@ -58,11 +58,11 @@
                         <div class="col-md-6 col-12 product-infors pr_sticky_su">
                             <div class="theiaStickySidebar">
                                 <div class="kalles-section-pr_summary kalles-section summary entry-summary mt__30">
-                                    <h1 class="product_title entry-title fs__16">{{product.name}}</h1>
+                                    <h1 class="product_title entry-title fs__16">{{product?.name}}</h1>
                                     <div class="flex wrap fl_between al_center price-review">
                                         <p class="price_range" id="price_ppr">
                                             <span class="price dib mb__5">
-                                                <del>${{product.price}}</del>
+                                                <del>${{product?.price}}</del>
                                                 <ins>${{discount}}</ins>
                                             </span>
                                         </p>
@@ -85,7 +85,7 @@
                                         </a>
                                     </div>
                                     <div class="pr_short_des">
-                                        <p class="mg__0">{{product.description}}</p>
+                                        <p class="mg__0">{{product?.description}}</p>
                                     </div>
                                     <div class="carrito tc pa flex column ts__03">
                                         <a (click)="addProduct(product)"

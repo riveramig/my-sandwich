@@ -6,6 +6,6 @@ import { SandwichState } from "./sandwich.state";
 
 const featureName = 'sandwich';
 
-export const selectCategoryFeature = createFeatureSelector<AppState,SandwichState>(featureName);
+export const selectCategoryFeature = createFeatureSelector<AppState, SandwichState>(featureName);
 
-export const selectAllSandwiches:MemoizedSelector<object,Sandwich[]> = createSelector(selectCategoryFeature,(state)=>state.sandwiches ? state.sandwiches : []);
+export const selectAllSandwiches: MemoizedSelector<object, Sandwich[]> = createSelector(selectCategoryFeature, state => state.sandwiches ? state.sandwiches : []);

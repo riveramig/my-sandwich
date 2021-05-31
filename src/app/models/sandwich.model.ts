@@ -5,6 +5,7 @@ export interface Sandwich {
     name: string;
     description: string;
     price: number;
+    discount: number;
     ingredients: Ingredient[];
     img: string;
 }

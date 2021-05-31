@@ -5,14 +5,14 @@
             <div
                 class="mt__30 nt_cats_holder row equal_nt hoverz_true cat_size_4 cat_lay4_1 cat_lay5_3 cat_space_30 cat_design_1">
                 <div class="cat_grid_item cat_space_item cat_grid_item_1 col-md-6 col-12"
-                    (click)="navigateCategory(categories[1].id)">
+                    (click)="navigateCategory(categories[0].id)">
                     <div class="cat_grid_item__content pr oh">
                         <a class="d-block cat_grid_item__link">
                             <div class="cat_grid_item__overlay item__position nt_bg_lz lazyload top"
-                                [attr.data-bgset]="categories[1].imageBackground"></div>
+                                [attr.data-bgset]="categories[0].imageBackground"></div>
                         </a>
                         <div class="cat_grid_item__wrapper pe_none">
-                            <div class="cat_grid_item__title">{{categories[1].nameToDisplay}}</div>
+                            <div class="cat_grid_item__title">{{categories[0].nameToDisplay}}</div>
                         </div>
                     </div>
                 </div>
@@ -20,14 +20,14 @@
                 <div class="col-lg-3 col-md-3 col-6">
                     <div class="row">
                         <div class="cat_grid_item cat_space_item cat_grid_item_2 col-12"
-                            (click)="navigateCategory(categories[0].id)">
+                            (click)="navigateCategory(categories[1].id)">
                             <div class="cat_grid_item__content pr oh">
                                 <a class="d-block cat_grid_item__link">
                                     <div class="cat_grid_item__overlay item__position nt_bg_lz lazyload center"
-                                        [attr.data-bgset]="categories[0].imageBackground"></div>
+                                        [attr.data-bgset]="categories[1].imageBackground"></div>
                                 </a>
                                 <div class="cat_grid_item__wrapper pe_none">
-                                    <div class="cat_grid_item__title">{{categories[0].nameToDisplay}}</div>
+                                    <div class="cat_grid_item__title">{{categories[1].nameToDisplay}}</div>
                                 </div>
                             </div>
                         </div>
@@ -73,46 +73,11 @@
                     <i class="dn clprfalse title_2 la-gem"></i>
                     <span></span>
                 </span>
-                <span class="section-subtitle d-block tc sub-title">Top view in this week</span>
+                <span class="section-subtitle d-block tc sub-title">Lo mas vendido esta semana</span>
             </div>
 
             <div
                 class="products nt_products_holder row fl_center row_pr_1 cdt_des_5 round_cd_true nt_cover ratio_nt position_8 space_30">
-
-                <div class="col-lg-3 col-md-3 col-6 pr_animated done mt__30 pr_grid_item product nt_pr desgin__1">
-                    <div class="product-inner pr">
-                        <div class="product-image pr oh lazyload">
-                            <span class="tc nt_labels pa pe_none cw">
-                                <span class="nt_label new">New</span>
-                            </span>
-                            <a class="d-block" href="product-detail-layout-01.html">
-                                <div class="pr_lazy_img main-img nt_img_ratio nt_bg_lz lazyload padding-top__127_571"
-                                    data-bgset="assets/images/products/pr-01.jpg"></div>
-                            </a>
-                            <div class="hover_button op__0 tc pa flex column ts__03">
-                                <a class="pr nt_add_qv js_add_qv cd br__40 pl__25 pr__25 bgw tc dib ttip_nt tooltip_top_left"
-                                    href="#">
-                                    <span class="tt_txt">Quick view</span>
-                                    <i class="iccl iccl-eye"></i>
-                                    <span>Quick view</span>
-                                </a>
-                                <a href="#"
-                                    class="pr pr_atc cd br__40 bgw tc dib js__qs cb chp ttip_nt tooltip_top_left">
-                                    <span class="tt_txt">Quick Shop</span>
-                                    <i class="iccl iccl-cart"></i>
-                                    <span>Quick Shop</span>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="product-info mt__15">
-                            <h3 class="product-title pr fs__14 mg__0 fwm">
-                                <a class="cd chp" href="product-detail-layout-01.html">Analogue Resin Strap</a>
-                            </h3>
-                            <span class="price dib mb__5">$30.00</span>
-                        </div>
-                    </div>
-                </div>
-
                 <div class="col-lg-3 col-md-3 col-6 pr_animated done mt__30 pr_grid_item product nt_pr desgin__1">
                     <div class="product-inner pr">
                         <div class="product-image pr oh lazyload">
@@ -143,80 +108,11 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="col-lg-3 col-md-3 col-6 pr_animated done mt__30 pr_grid_item product nt_pr desgin__1">
-                    <div class="product-inner pr">
-                        <div class="product-image pr oh lazyload">
-                            <a class="d-block" href="product-detail-layout-01.html">
-                                <div class="pr_lazy_img main-img nt_img_ratio nt_bg_lz lazyload padding-top__127_571"
-                                    data-bgset="assets/images/products/pr-04.jpg"></div>
-                            </a>
-                            <div class="hover_button op__0 tc pa flex column ts__03">
-                                <a class="pr nt_add_qv js_add_qv cd br__40 pl__25 pr__25 bgw tc dib ttip_nt tooltip_top_left"
-                                    href="#">
-                                    <span class="tt_txt">Quick view</span>
-                                    <i class="iccl iccl-eye"></i>
-                                    <span>Quick view</span>
-                                </a>
-                                <a href="#"
-                                    class="pr pr_atc cd br__40 bgw tc dib js__qs cb chp ttip_nt tooltip_top_left">
-                                    <span class="tt_txt">Quick Shop</span>
-                                    <i class="iccl iccl-cart"></i>
-                                    <span>Quick Shop</span>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="product-info mt__15">
-                            <h3 class="product-title pr fs__14 mg__0 fwm">
-                                <a class="cd chp" href="product-detail-layout-01.html">Blush Beanie</a>
-                            </h3>
-                            <span class="price dib mb__5">$15.00</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-3 col-6 pr_animated done mt__30 pr_grid_item product nt_pr desgin__1">
-                    <div class="product-inner pr">
-                        <div class="product-image pr oh lazyload">
-                            <span class="tc nt_labels pa pe_none cw">
-                                <span class="onsale nt_label">
-                                    <span>-25%</span>
-                                </span>
-                            </span>
-                            <a class="d-block" href="product-detail-layout-01.html">
-                                <div class="pr_lazy_img main-img nt_img_ratio nt_bg_lz lazyload padding-top__127_571"
-                                    data-bgset="assets/images/products/pr-06.jpg"></div>
-                            </a>
-                            <div class="hover_button op__0 tc pa flex column ts__03">
-                                <a class="pr nt_add_qv js_add_qv cd br__40 pl__25 pr__25 bgw tc dib ttip_nt tooltip_top_left"
-                                    href="#">
-                                    <span class="tt_txt">Quick view</span>
-                                    <i class="iccl iccl-eye"></i>
-                                    <span>Quick view</span>
-                                </a>
-                                <a href="#"
-                                    class="pr pr_atc cd br__40 bgw tc dib js__qs cb chp ttip_nt tooltip_top_left">
-                                    <span class="tt_txt">Quick Shop</span>
-                                    <i class="iccl iccl-cart"></i>
-                                    <span>Quick Shop</span>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="product-info mt__15">
-                            <h3 class="product-title pr fs__14 mg__0 fwm">
-                                <a class="cd chp" href="product-detail-layout-01.html">Cluse La Boheme Rose Gold</a>
-                            </h3>
-                            <span class="price dib mb__5">
-                                <del>$60.00</del>
-                                <ins>$45.00</ins>
-                            </span>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
     <!-- end featured collection -->
+
     <!--shipping info-->
     <div class="kalles-section nt_section type_shipping kalles-section__type_shipping">
         <div class="container">
@@ -227,8 +123,8 @@
                             <i class="pegk pe-7s-car"></i>
                         </div>
                         <div class="col content">
-                            <h3 class="title cd fs__14 mg__0 mb__5">FREE SHIPPING</h3>
-                            <p class="mg__0">Free shipping on all US order or order above $100</p>
+                            <h3 class="title cd fs__14 mg__0 mb__5">ENVIO GRATIS</h3>
+                            <p class="mg__0">Envío gratis en pedidos superiores a $ 60.000</p>
                         </div>
                     </div>
                 </div>
@@ -238,8 +134,8 @@
                             <i class="pegk pe-7s-help2"></i>
                         </div>
                         <div class="col content">
-                            <h3 class="title cd fs__14 mg__0 mb__5">SUPPORT 24/7</h3>
-                            <p class="mg__0">Contact us 24 hours a day, 7 days a week</p>
+                            <h3 class="title cd fs__14 mg__0 mb__5">Soporte 24/7</h3>
+                            <p class="mg__0">Contáctenos las 24 horas del día, los 7 días de la semana</p>
                         </div>
                     </div>
                 </div>
@@ -249,8 +145,8 @@
                             <i class="pegk pe-7s-refresh"></i>
                         </div>
                         <div class="col content">
-                            <h3 class="title cd fs__14 mg__0 mb__5">30 DAYS RETURN</h3>
-                            <p class="mg__0">Simply return it within 30 days for an exchange.</p>
+                            <h3 class="title cd fs__14 mg__0 mb__5">Garantizamos calidad</h3>
+                            <p class="mg__0">Simplemente devuélvalo si no te quedas satisfecho.</p>
                         </div>
                     </div>
                 </div>
@@ -260,8 +156,8 @@
                             <i class="pegk pe-7s-door-lock"></i>
                         </div>
                         <div class="col content">
-                            <h3 class="title cd fs__14 mg__0 mb__5">100% PAYMENT SECURE</h3>
-                            <p class="mg__0">We ensure secure payment with PEV</p>
+                            <h3 class="title cd fs__14 mg__0 mb__5">PAGO 100% SEGURO</h3>
+                            <p class="mg__0">Garantizamos un pago seguro.</p>
                         </div>
                     </div>
                 </div>
