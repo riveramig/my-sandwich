@@ -102,20 +102,9 @@
                             '1.0-0'}}</div>
                     </div>
                 </div>
-                <p class="txt_tax_ship mb__5 fs__12">Taxes, shipping and discounts codes calculated at checkout</p>
-                <p class="pr d-block mb__5 fs__12">
-                    <input type="checkbox" id="cart_agree" class="js_agree_ck mr__5" name="ck_lumise"><label
-                        for="cart_agree">I agree with the terms and conditions.</label>
-                    <svg class="dn scl_selected" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                        <path d="M9 20l-7-7 3-3 4 4L19 4l3 3z"></path>
-                    </svg>
-                </p>
-                <a href="checkout.html"
+                <button (click)="sendCart()"
                     class="button btn-checkout mt__10 mb__10 js_add_ld d-inline-flex justify-content-center align-items-center text-white">Check
-                    Out</a>
-                <div class="cat_img_trust mt__10">
-                    <img class="w__100 lz_op_ef" src="assets/images/trust_img2.png" width="360" height="46" alt="">
-                </div>
+                    Out</button>
             </div>
         </div>
 
