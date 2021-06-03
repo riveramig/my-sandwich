@@ -31,6 +31,7 @@ import { HttpXsrfInterceptor } from './utils/interceptors/XhrInterceptor';
 import { EffectsModule } from '@ngrx/effects';
 import { SandwichEffects } from './store/sandwich/sandwich.effects';
 import { DiscountPipe } from './pipes/discount.pipe';
+import { CartEffects } from './store/cart/cart.effects';
 
 const metaReducers: MetaReducer<Object, Action>[] = []
 
@@ -66,7 +67,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         deps: [HttpClient]
       }
     }),
-    EffectsModule.forRoot([SandwichEffects]),
+    EffectsModule.forRoot([SandwichEffects, CartEffects]),
   ],
   providers: [
     ProductService,
