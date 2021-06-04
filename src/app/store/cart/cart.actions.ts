@@ -7,7 +7,9 @@ export enum CartActionType {
     removeSandwichFromCart = '[Cart] remove sandwich',
     reduceQuantitySandwichFromCart = '[Cart] remove quantity sandwich',
     sendCartOrder = '[Cart] send cart order',
-    clearCart = '[Cart] clear cart'
+    clearCart = '[Cart] clear cart',
+    getOrders = '[Cart] get orders',
+    setMyOrders = '[Cart] set my orders'
 }
 
 export class AddSandwich implements Action {
@@ -36,5 +38,16 @@ export class ClearCart implements Action {
     constructor() { }
 }
 
+export class GetOrders implements Action {
+    public readonly type = CartActionType.getOrders;
+    constructor() {
+    }
+}
 
-export declare type CartActions = AddSandwich | RemoveSandwich | ReduceQuantitySandwich | SendCart | ClearCart;
+export class SetMyOrders implements Action {
+    public readonly type = CartActionType.setMyOrders;
+    constructor(public payload: any) { }
+}
+
+
+export declare type CartActions = AddSandwich | RemoveSandwich | ReduceQuantitySandwich | SendCart | ClearCart | GetOrders | SetMyOrders;

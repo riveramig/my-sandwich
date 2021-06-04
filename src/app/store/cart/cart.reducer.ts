@@ -5,7 +5,8 @@ import * as _ from 'lodash';
 
 const initState: CartState = {
     id: uuidv4(),
-    items: []
+    items: [],
+    orders: []
 }
 
 
@@ -32,6 +33,11 @@ export function cartReducer(state = initState, action: CartActions) {
             return {
                 ...state,
                 items: []
+            }
+        case CartActionType.setMyOrders:
+            return {
+                ...state,
+                orders: action.payload
             }
         default:
             return state;

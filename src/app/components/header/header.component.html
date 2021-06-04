@@ -47,8 +47,6 @@
                                         </option>
                                     </select>
                                 </div>
-                                <a class="icon_search push_side cb chp" data-id="#nt_search_canvas" href="#"><i
-                                        class="iccl iccl-search"></i></a>
                                 <div class="my-account ts__05 pr dn db_md">
                                     <a class="cb chp db push_side" href="#" data-id="#nt_login_canvas"><i
                                             class="iccl iccl-user"></i></a>
@@ -56,7 +54,8 @@
                                 <div class="icon_cart pr">
                                     <a class="push_side pr cb chp db" href="#" data-id="#nt_cart_canvas">
                                         <i class="iccl iccl-cart pr"><span
-                                                class="op__0 ts_op pa tcount bgb br__50 cw tc">{{currentCartItems$ | async }}</span></i>
+                                                class="op__0 ts_op pa tcount bgb br__50 cw tc">{{currentCartItems$ |
+                                                async }}</span></i>
                                     </a>
                                 </div>
                             </div>
@@ -67,124 +66,22 @@
                             <ul id="nt_menu_id" class="nt_menu in_flex al_center">
                                 <li
                                     class="type_mega menu_wid_cus menu-item has-children menu_has_offsets menu_default pos_default">
-                                    <a class="lh__1 flex al_center pr" href="index.html">{{'HEADER.producto'|
-                                        translate}}</a>
-                                    <div class="cus sub-menu">
-                                        <div class="container megamenu-content-700px">
-                                            <div class="row lazy_menu lazyload lazy_menu_mega"
-                                                data-jspackery='{ "itemSelector": ".sub-column-item","gutter": 0,"percentPosition": true,"originLeft": true }'>
-                                                <div class="type_mn_link menu-item sub-column-item col-6">
-                                                    <a href="home-default.html">HOMEPAGES</a>
-                                                    <ul class="sub-column not_tt_mn">
-                                                        <li class="menu-item">
-                                                            <a href="home-default.html">Home Default
-                                                                <span class="lbc_nav lb_menu_hot ml__5">Hot</span>
-                                                            </a>
-                                                        </li>
-                                                        <li class="menu-item">
-                                                            <a href="home-classic.html">Home Classic
-                                                                <span class="lbc_nav lb_menu_hot ml__5">Hot</span>
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                                <div class="type_mn_link menu-item sub-column-item col-6">
-                                                    <a href="home-default.html">Header Layouts</a>
-                                                    <ul class="sub-column not_tt_mn">
-                                                        <li class="menu-item">
-                                                            <a href="home-header-01.html">Header Layout 1</a>
-                                                        </li>
-                                                        <li class="menu-item">
-                                                            <a href="home-header-02.html">Header Layout 2</a>
-                                                        </li>
-                                                        <li class="menu-item">
-                                                            <a href="home-default.html">Header Layout 3</a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <span style="cursor: pointer;color: black;"
+                                        (click)="goToProducts()">{{'HEADER.producto'|
+                                        translate}}</span>
                                 </li>
                                 <li
                                     class="type_mega menu_wid_cus menu-item has-children menu_has_offsets menu_center pos_center">
                                     <a class="lh__1 flex al_center pr" href="shop-filter-sidebar.html">{{'HEADER.pideya'
                                         | translate}}<span class="lbc_nav">{{'HEADER.new' | translate}}</span></a>
                                     <div class="cus sub-menu">
-                                        <div class="container megamenu-content-650px">
-                                            <div class="row lazy_menu lazyload lazy_menu_mega"
-                                                data-jspackery='{ "itemSelector": ".sub-column-item","gutter": 0,"percentPosition": true,"originLeft": true }'>
-                                                <div class="type_mn_link menu-item sub-column-item col-6">
-                                                    <a href="shop-filter-sidebar.html">FEATURES</a>
-                                                    <ul class="sub-column not_tt_mn">
-                                                        <li class="menu-item">
-                                                            <a href="shop-filter-options.html">Filter options<span
-                                                                    class="lbc_nav lb_menu_hot ml__5">hot</span></a>
-                                                        </li>
-                                                        <li class="menu-item">
-                                                            <a href="shop-load-more.html">Load more button</a>
-                                                        </li>
-                                                        <li class="menu-item">
-                                                            <a href="shop-Infinite-scrolling.html">Infinite
-                                                                scrolling</a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                                <div class="type_mn_pr menu-item sub-column-item col-6">
-                                                    <div
-                                                        class="prs_nav products nt_products_holder row al_center row_pr_2 cdt_des_1 round_cd_false nt_cover ratio_nt position_8">
-                                                        <div
-                                                            class="col-lg-12 col-md-12 col-12 pr_animated done mt__30 pr_grid_item product nt_pr desgin__2 tc">
-                                                            <div class="product-inner pr">
-                                                                <div class="product-image pr oh lazyload">
-
-                                                                    <a class="d-block"
-                                                                        href="product-detail-layout-01.html">
-                                                                        <div class="pr_lazy_img main-img nt_img_ratio nt_bg_lz lazyload padding-top__127_571"
-                                                                            data-bgset="assets/images/home-classic/mega-bagal-1.jpg">
-                                                                        </div>
-                                                                    </a>
-                                                                    <div
-                                                                        class="hover_img pa pe_none t__0 l__0 r__0 b__0 op__0">
-                                                                        <div class="pr_lazy_img back-img pa nt_bg_lz lazyload padding-top__127_571"
-                                                                            data-bgset="assets/images/home-classic/mega-bagal-3.jpg">
-                                                                        </div>
-                                                                    </div>
-                                                                    <div
-                                                                        class="hover_button op__0 tc pa flex column ts__03">
-                                                                        <a class="pr nt_add_qv js_add_qv cd br__40 pl__25 pr__25 bgw tc dib ttip_nt tooltip_top_left"
-                                                                            href="#">
-                                                                            <span class="tt_txt">Quick view</span>
-                                                                            <i class="iccl iccl-eye"></i>
-                                                                            <span>Quick view</span>
-                                                                        </a>
-                                                                        <a href="#"
-                                                                            class="pr pr_atc cd br__40 bgw tc dib js__qs cb chp ttip_nt tooltip_top_left">
-                                                                            <span class="tt_txt">Quick Shop</span>
-                                                                            <i class="iccl iccl-cart"></i>
-                                                                            <span>Quick Shop</span>
-                                                                        </a>
-                                                                    </div>
-                                                                    <div class="product-attr pa ts__03 cw op__0 tc">
-                                                                        <p class="truncate mg__0 w__100">S, M, L</p>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        <p>Espera novedades proximamente!</p>
                                     </div>
                                 </li>
-                                <li class="menu-item type_simple">
-                                    <a class="lh__1 flex al_center pr kalles-lbl__nav-sale"
-                                        href="shop-filter-sidebar.html">{{'HEADER.sale' | translate}}<span
-                                            class="lbc_nav">{{'HEADER.limited' | translate}}</span></a>
-                                </li>
-                                <li
-                                    class="type_dropdown menu_wid_ menu-item has-children menu_has_offsets menu_right pos_right">
-                                    <a class="lh__1 flex al_center pr" href="blog-grid.html">{{'HEADER.us' |
+                                <!-- <a class="icon_search push_side cb chp" data-id="#nt_search_canvas" href="#"><i
+                                    class="iccl iccl-search"></i></a> -->
+                                <li class="menu-item type_simple" (click)="getOrders()">
+                                    <a class=" push_side" data-id="#nt_search_canvas" href="#">{{'HEADER.sale' |
                                         translate}}</a>
                                 </li>
                             </ul>

@@ -1,13 +1,13 @@
 <div id="nt_cart_canvas" class="nt_fk_canvas dn">
     <div class="nt_mini_cart nt_js_cart flex column h__100 btns_cart_1">
         <div class="mini_cart_header flex fl_between al_center">
-            <div class="h3 fwm tu fs__16 mg__0">Shopping cart</div>
+            <div class="h3 fwm tu fs__16 mg__0">Carrito de Compras</div>
             <i class="close_pp pegk pe-7s-close ts__03 cd"></i>
         </div>
         <div class="cart_threshold cart_thres_js">
-            <div class="cart_thres_2">Almost there, add
-                <span class="cr fwm mn_thres_js">{{ freeShiping | currency:'COP ': 'symbol' : '1.0-0'}}</span> more to
-                get <span class="cr fwm">FREE SHIPPING!</span>
+            <div class="cart_thres_2">Aprovecha nuestro increibles descuentos, hasta
+                <span class="cr fwm mn_thres_js">20%</span> en todos nuestros
+                productos <span class="cr fwm">POR TIEMPO LIMITADO!</span>
             </div>
         </div>
         <div class="mini_cart_wrap">
@@ -15,7 +15,7 @@
                 <div class="fixcl-scroll-content">
                     <div *ngIf="(cartItems$ | async)?.length === 0" class="tc mt__40"><i
                             class="las la-shopping-bag pr mb__10 icon-size"></i>
-                        <p>Your cart is empty.</p>
+                        <p>Tu carrito está vacio.</p>
                     </div>
                     <div class="mini_cart_items js_cat_items">
                         <div class="mini_cart_item js_cart_item flex al_center pr oh"
@@ -75,20 +75,11 @@
                         </div>
                     </div>
                     <div class="mini_cart_tool js_cart_tool tc ">
-                        <div data-id="note" class="mini_cart_tool_note js_cart_tls ttip_nt tooltip_top">
-                            <span class="txt_add_note "><i class="lar la-clipboard"></i><span class="tt_txt">Add Order
-                                    Note</span></span>
-                            <span class="txt_edit_note dn"><i class="las la-clipboard-list"></i><span
-                                    class="tt_txt">Edit Order Note</span></span>
-                        </div>
-                        <div data-id="gift" class="mini_cart_tool_gift js_cart_tls js_gift_wrap ttip_nt tooltip_top">
-                            <i class="las la-gift"></i><span class="tt_txt">Add A Gift Wrap</span>
-                        </div>
                         <div data-id="ship" class="mini_cart_tool_ship js_cart_tls ttip_nt tooltip_top">
-                            <i class="las la-truck-moving"></i><span class="tt_txt">Estimate Shipping</span>
+                            <i class="las la-truck-moving"></i><span class="tt_txt">Detalles para el cargador</span>
                         </div>
                         <div data-id="dis" class="mini_cart_tool_dis js_cart_tls ttip_nt tooltip_top">
-                            <i class="las la-tag"></i><span class="tt_txt">Add A Coupon</span>
+                            <i class="las la-credit-card"></i><span class="tt_txt">Detalles tarjeta de credito</span>
                         </div>
                     </div>
                 </div>
@@ -96,15 +87,15 @@
             <div class="mini_cart_footer js_cart_footer">
                 <div class="js_cat_dics"></div>
                 <div class="total row fl_between al_center">
-                    <div class="col-auto"><strong>Subtotal:</strong></div>
+                    <div class="col-auto"><strong>Total:</strong></div>
                     <div class="col-auto tr js_cat_ttprice">
                         <div class="cart_tot_price">{{selectCurrentTotal$ | async | currency:'COP ': 'symbol' :
                             '1.0-0'}}</div>
                     </div>
                 </div>
                 <button (click)="sendCart()"
-                    class="button btn-checkout mt__10 mb__10 js_add_ld d-inline-flex justify-content-center align-items-center text-white">Check
-                    Out</button>
+                    class="button btn-checkout mt__10 mb__10 js_add_ld d-inline-flex justify-content-center align-items-center text-white">Confirmar
+                    Compra</button>
             </div>
         </div>
 
@@ -145,39 +136,13 @@
         <!--mini cart tool shipping-->
         <div class="mini_cart_ship pe_none">
             <div class="shipping_calculator">
-                <h3>Estimate Shipping</h3>
+                <h3>Indicaciones Adicionales</h3>
                 <p class="field">
-                    <label for="address_country_ship">Country</label>
-                    <select id="address_country_ship">
-                        <option value="" selected>---</option>
-                        <option value="United States">United States</option>
-                        <option value="United Kingdom">United Kingdom</option>
-                        <option value="Italy">Italy</option>
-                        <option value="Germany">Germany</option>
-                        <option value="France">France</option>
-                        <option value="Spain">Spain</option>
-                        <option value="Australia">Australia</option>
-                        <option value="Finland">Finland</option>
-                        <option value="Austria">Austria</option>
-                        <option value="Belgium">Belgium</option>
-                        <option value="Brazil">Brazil</option>
-                        <option value="Canada">Canada</option>
-                        <option value="Chile">Chile</option>
-                        <option value="Cuba">Cuba</option>
-                        <option value="India">India</option>
-                        <option value="Indonesia">Indonesia</option>
-                        <option value="Japan">Japan</option>
-                    </select>
-                </p>
-                <p class="field">
-                    <label for="address_zip_ship">Postal/Zip Code</label>
+                    <label for="address_zip_ship">Indicaciones</label>
                     <input type="text" id="address_zip_ship">
                 </p>
                 <p class="field">
-                    <input type="button" class="get_rates button" value="Calculate Shipping">
-                </p>
-                <p class="field">
-                    <input type="button" class="button btn_back js_cart_tls_back" value="Cancel">
+                    <input type="button" class="button btn_back js_cart_tls_back" value="Guardar">
                 </p>
                 <div id="response_calcship"></div>
             </div>
@@ -186,15 +151,90 @@
         <!--mini cart tool coupon-->
         <div class="mini_cart_dis pe_none">
             <div class="shipping_calculator">
-                <h3>Add A Coupon</h3>
-                <p>Coupon code will work on checkout page</p>
-                <p class="field">
-                    <input type="text" name="discount" value="" placeholder="Coupon code">
-                </p>
-                <p class="field">
-                    <input type="button" class="button btn_back js_cart_tls_back" value="Save">
-                </p>
-                <input type="button" class="button btn_back btn_back2 js_cart_tls_back" value="Cancel">
+                <h3>Tarjeta de Crédito</h3>
+                <div class="padding">
+                    <div class="row">
+                        <div>
+                            <div class="card">
+                                <div class="card-header">
+                                    <small>Paga con cualquier banco</small>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <label for="name">Nombre</label>
+                                                <input class="form-control" id="name" type="text"
+                                                    placeholder="Ingresa como aparece en la tarjeta">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <label for="ccnumber">Número</label>
+                                                <div class="input-group">
+                                                    <input class="form-control" type="text"
+                                                        placeholder="0000 0000 0000 0000" autocomplete="email">
+                                                    <div class="input-group-append">
+                                                        <span class="input-group-text">
+                                                            <i class="las la-credit-card"></i>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group col-sm-4">
+                                            <label for="ccmonth">Mes</label>
+                                            <select class="form-control" id="ccmonth">
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
+                                                <option>6</option>
+                                                <option>7</option>
+                                                <option>8</option>
+                                                <option>9</option>
+                                                <option>10</option>
+                                                <option>11</option>
+                                                <option>12</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group col-sm-4">
+                                            <label for="ccyear">Año</label>
+                                            <select class="form-control" id="ccyear">
+                                                <option>2014</option>
+                                                <option>2015</option>
+                                                <option>2016</option>
+                                                <option>2017</option>
+                                                <option>2018</option>
+                                                <option>2019</option>
+                                                <option>2020</option>
+                                                <option>2021</option>
+                                                <option>2022</option>
+                                                <option>2023</option>
+                                                <option>2024</option>
+                                                <option>2025</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label for="cvv">CVV/CVC</label>
+                                                <input class="form-control" id="cvv" type="text" placeholder="123">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="field">
+                                    <input type="button" class="button btn_back js_cart_tls_back" value="Guardar">
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 

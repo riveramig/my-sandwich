@@ -19,9 +19,8 @@ export class OrderService extends Services {
   backendUrl = environment.url;
   headers = this.GetHttpHeaders();
 
-  getProducts(caterory: any): Observable<any> {
-    // TO-DO: Manage category
-    return this.http.get(`${this.backendUrl}product`, { withCredentials: true });
+  getOrders(): Observable<any> {
+    return this.http.get(`${this.backendUrl}order`, { withCredentials: true });
   }
 
   createOrder(orders: CartItemDto[]): Observable<any> {

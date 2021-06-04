@@ -6,7 +6,8 @@ import { catchError, exhaustMap, map, switchMap, tap, withLatestFrom } from 'rxj
 import { OrderService } from 'src/app/services/order/order.service';
 import {
     CartActionType,
-    SendCart
+    SendCart,
+    GetOrders
 } from './cart.actions';
 import { selectOrderItems } from './cart.selector';
 import { CartState } from './cart.state';
@@ -31,6 +32,19 @@ export class CartEffects {
                 .pipe(
                     map(data => {
                         return { type: CartActionType.clearCart };
+                    }));
+        })
+    ));
+
+
+    GetOrders$: Observable<Action> = createEffect(() => this.actions$.pipe(
+        ofType<GetOrders>(CartActionType.getOrders),
+        tap(value => console.log('getOrders effect', value)),
+        exhaustMap(category => {
+            return this.orderService.getOrders()
+                .pipe(
+                    map(data => {
+                        return { type: CartActionType.setMyOrders, payload: data };
                     }));
         })
     ));

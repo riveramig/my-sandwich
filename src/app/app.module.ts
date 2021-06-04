@@ -19,7 +19,6 @@ import { HomeComponent } from './pages/home/home.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { LoginBoxComponent } from './components/login-box/login-box.component';
 import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
-import { SearchBoxComponent } from './components/search-box/search-box.component';
 import { CategoryComponent } from './pages/category/category.component';
 import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
 import { CheckoutComponent } from './pages/checkout/checkout.component';
@@ -32,12 +31,20 @@ import { EffectsModule } from '@ngrx/effects';
 import { SandwichEffects } from './store/sandwich/sandwich.effects';
 import { DiscountPipe } from './pipes/discount.pipe';
 import { CartEffects } from './store/cart/cart.effects';
+import { RouterModule } from '@angular/router';
+import { CommonModule, registerLocaleData } from '@angular/common';
+import { OrdersComponent } from './components/orders/orders.component';
+
+import localeEsCo from '@angular/common/locales/es-CO';
+import { Services } from './services/services.service';
 
 const metaReducers: MetaReducer<Object, Action>[] = []
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
+
+registerLocaleData(localeEsCo);
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,7 +53,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     FooterComponent,
     LoginBoxComponent,
     ShoppingCartComponent,
-    SearchBoxComponent,
+    OrdersComponent,
     CategoryComponent,
     ProductDetailComponent,
     CheckoutComponent,
@@ -54,6 +61,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     DiscountPipe
   ],
   imports: [
+    RouterModule,
+    CommonModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,
@@ -72,6 +81,7 @@ export function HttpLoaderFactory(http: HttpClient) {
   providers: [
     ProductService,
     HttpXsrfInterceptor,
+    Services,
     { provide: HTTP_INTERCEPTORS, useClass: HttpXsrfInterceptor, multi: true },
     reduceProvider
   ],

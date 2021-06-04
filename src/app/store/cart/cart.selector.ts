@@ -15,3 +15,5 @@ export const selectNumberAllSandwichesInCart: MemoizedSelector<object, number> =
 export const selectCurrentTotalInCart: MemoizedSelector<object, number> = createSelector(selectCartFeature, (state) => state.items.map((item) => item.quantity * (item.sandwich.price - (item.sandwich.price * (item.sandwich.discount / 100)))).reduce((prev, curr) => { return prev = prev + curr }, 0));
 
 export const selectOrderItems: MemoizedSelector<object, CartItemDto[]> = createSelector(selectCartFeature, (state) => state.items.map((item) => { return { 'orderProductCode': item.sandwich.code, 'orderQuantity': item.quantity } }));
+
+export const selectMyOrdes: MemoizedSelector<object, any[]> = createSelector(selectCartFeature, state => state.orders ? state.orders : []);
