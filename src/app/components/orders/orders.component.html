@@ -1,0 +1,42 @@
+<div id="nt_search_canvas" class="nt_fk_full dn tl tc_lg">
+    <div class="nt_mini_cart flex column h__100">
+        <div class="mini_cart_wrap">
+            <form method="get" class="search_header mini_search_frm js_frm_search pr" role="search">
+                <div class="row">
+                    <div style="font-size: 30px;" class="frm_search_input pr oh col">
+                        Tus Ordenes de Compra
+                    </div>
+                </div>
+                <i class="close_pp pegk pe-7s-close ts__03 cd pa r__0"></i>
+                <div class="ld_bar_search"></div>
+            </form>
+            <div *ngIf="(orders$| async)?.length > 0" class="col-12 col-md-12 widget">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Fecha</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Valor</th>
+                            <th scope="col">Descuento</th>
+                            <th scope="col">Valor Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let currentOrder of orders$ | async; let i = index">
+                            <th scope="row">{{i+1}}</th>
+                            <td>{{currentOrder.orderDate}}</td>
+                            <td>{{currentOrder.orderStatus}}</td>
+                            <td>{{currentOrder.orderTotalAmount | currency:'COP ': 'symbol' : '1.0-0'}}</td>
+                            <td>{{currentOrder.orderTotalDiscount | currency:'COP ': 'symbol' : '1.0-0'}}</td>
+                            <td>{{currentOrder.orderTotal | currency:'COP ': 'symbol' : '1.0-0'}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="search_header__prs fwsb cd tc">
+            </div>
+
+        </div>
+    </div>
+</div>
